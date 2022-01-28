@@ -52,7 +52,7 @@ public class TodoController {
         return ResponseEntity.ok(response);
     }
 
-    @PatchMapping
+    @PatchMapping("{id}")
     public ResponseEntity<TodoResponse> update(@PathVariable Long id, @RequestBody TodoRequest request) {
         System.out.println("UPDATE");
         TodoEntity result = this.service.updateById(id, request);
