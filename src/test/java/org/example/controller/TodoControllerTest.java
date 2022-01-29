@@ -57,7 +57,7 @@ class TodoControllerTest {
         // request 를 String 형태로 변경
         ObjectMapper mapper = new ObjectMapper();
         String contents = mapper.writeValueAsString(request);
-        System.out.println(contents);
+        log.info(contents);
         this.mvc.perform(post("/")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(contents))
