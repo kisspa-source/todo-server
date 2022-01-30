@@ -12,8 +12,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.List;
-
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -57,7 +55,6 @@ class TodoControllerTest {
         // request 를 String 형태로 변경
         ObjectMapper mapper = new ObjectMapper();
         String contents = mapper.writeValueAsString(request);
-        log.info(contents);
         this.mvc.perform(post("/")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(contents))
